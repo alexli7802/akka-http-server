@@ -7,7 +7,7 @@ lazy val root = (project in file(".")).
       organization    := "ali",
       scalaVersion    := "2.12.6"
     )),
-    name := "akka-http-server",
+    name := "na-RESTful",
     libraryDependencies ++= Seq(
       "com.typesafe.akka" %% "akka-http"            % akkaHttpVersion,
       "com.typesafe.akka" %% "akka-http-spray-json" % akkaHttpVersion,
@@ -18,5 +18,6 @@ lazy val root = (project in file(".")).
       "com.typesafe.akka" %% "akka-testkit"         % akkaVersion     % Test,
       "com.typesafe.akka" %% "akka-stream-testkit"  % akkaVersion     % Test,
       "org.scalatest"     %% "scalatest"            % "3.0.5"         % Test
-    )
+    ),
+    assemblyJarName in assembly := "na-RESTful.jar"
   )

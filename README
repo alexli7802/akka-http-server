@@ -1,0 +1,8 @@
+This project is created to implement RESTful APIs for CellOS network solution
+ - built with akka-http, akka-stream, hive-jdbc and etc.
+
+
+================== development log ================
+- 10/Aug/2018: 
+  * created basic application
+
