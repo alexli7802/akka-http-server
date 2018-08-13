@@ -15,7 +15,7 @@ object WebApp extends routes.ServiceRoutes {
 
   def main(args: Array[String]): Unit = {
     log.info("================= WebApp starts ================")
-    val bindingFuture = Http().bindAndHandle(topRoutes, "localhost", 8282)
+    val bindingFuture = Http().bindAndHandle(topRoutes, "0", 8282)
 
     println("""
       Server online at http://localhost:8282
