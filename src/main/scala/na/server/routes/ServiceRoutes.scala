@@ -12,11 +12,17 @@ trait ServiceRoutes {
   lazy val topRoutes: Route = {
     path("api-test") {
       get {
-        println("http-request on /api-test")
-        respondWithHeaders(`Access-Control-Allow-Origin`.*, `Access-Control-Allow-Headers`("X-Requested-With")) {
-          complete(Seq(Person("Pawel", 25), Person("Joy", 31), Person("DeadPool", 40)))
+        //      	println(s"http-request: get /api-test")
+
+        parameters('fromday, 'fromhour, 'today, 'tohour) { (fromday, fromhour, today, tohour) =>
+
+          println(s"http-request on /api-test: ${fromday}:${fromhour} - ${today}:${tohour}")
+          respondWithHeaders(`Access-Control-Allow-Origin`.*, `Access-Control-Allow-Headers`("X-Requested-With")) {
+            complete(Seq(Person("Pawel", 25), Person("Joy", 31), Person("DeadPool", 40)))
+          }
         }
       }
     }
   }
+
 }
